@@ -83,9 +83,8 @@ export function updateReaderPopup() {
   textarea.hidden = hidePopupTextarea || task.status === "waiting";
   textarea.value = task.result || task.raw;
   textarea.style.fontSize = `${getPref("fontSize")}px`;
-  textarea.style.lineHeight = `${
-    Number(getPref("lineHeight")) * Number(getPref("fontSize"))
-  }px`;
+  textarea.style.lineHeight = `${Number(getPref("lineHeight")) * Number(getPref("fontSize"))
+    }px`;
   updateHidden(addToNoteButton, !ZoteroContextPane.activeEditor);
 
   updatePopupSize(popup, textarea);
@@ -173,12 +172,16 @@ export function buildReaderPopup(
           styles: {
             fontSize: `${getPref("fontSize")}px`,
             fontFamily: "inherit",
-            lineHeight: `${
-              Number(getPref("lineHeight")) * Number(getPref("fontSize"))
-            }px`,
+            lineHeight: `${Number(getPref("lineHeight")) * Number(getPref("fontSize"))
+              }px`,
             width: keepSize ? `${getPref("popupWidth")}px` : "-moz-available",
-            height: `${Math.max(
+            /*height: `${Math.max(
               keepSize ? Number(getPref("popupHeight")) : 30,
+            )}px`,
+            */
+
+            height: `${Math.max(
+              keepSize ? Number(getPref("popupHeight")) : 25,
             )}px`,
             marginLeft: "2px",
           },
